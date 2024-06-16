@@ -1,7 +1,7 @@
 const AppError = require("../utils/appError");
 
 const handleDuplicateFieldsDB = (err) => {
-  const message = `Duplikat: ${err.name}. Użyj innego`;
+  const message = `Duplikat: ${err.keyValue.name}. Użyj innego`;
   return new AppError(message, 400);
 };
 
