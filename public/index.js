@@ -1,14 +1,15 @@
 /* eslint-disable */
+import { showAlert } from './alerts.js';
 const loginForm = document.querySelector('.form-login');
 
 loginForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
   try {
-    e.preventDefault();
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
     const res = await axios({
       method: 'post',
-      url: '/api/v1/login',
+      url: '/api/v1/users/login',
       data: { email, password },
     });
 
