@@ -4,12 +4,13 @@ html(lang="pl")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet" href="styleslog.css")
+    script(type="module" src="index.js" defer)
     title Rejestracja
       
   body
     .login-container
       h2 Zarejestruj się
-      form
+      form.form-register
         input(type="email" name="email" placeholder="Email" required)
         br
         input(type="password" name="password" placeholder="Hasło" required)

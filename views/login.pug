@@ -4,15 +4,17 @@ html(lang="pl")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet" href="styleslog.css")
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
+    script(type="module" src="index.js" defer)
     title Logowanie
 
   body
     .login-container
       h2 Zaloguj się
-      form
-        input(type="email" name="email" placeholder="Email" required)
+      form.form-login
+        input(type="email" name="email" placeholder="Email" id='email' required)
         br
-        input(type="password" name="password" placeholder="Hasło" required)
+        input(type="password" name="password" placeholder="Hasło" id='password' required)
         br
         input#zapisz(type="submit" value="Zaloguj się")
       .register-link
