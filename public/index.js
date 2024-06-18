@@ -8,6 +8,10 @@ const titleRaport = document.getElementById('title-raport');
 const ingredientsRaport = document.getElementById('ingredients-raport');
 const symptomsRaport = document.getElementById('symptoms-raport');
 const dateRaport = document.getElementById('date-raport');
+const sectionRaports = document.querySelector('.section-raports');
+const chooseSymptomsBox = document.querySelector('.choose-symptoms-box');
+const raportDateStart = document.getElementById('raport-date-start');
+const raportDateEnd = document.getElementById('raport-date-end');
 
 ////////////////////////////////////////////////////////////
 const hideAlert = () => {
@@ -21,6 +25,23 @@ const showAlert = (type, msg) => {
   document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
   window.setTimeout(hideAlert, 5000);
 };
+
+if (sectionRaports) {
+  chooseSymptomsBox.addEventListener('click', async (e) => {
+    try {
+      const symptom = e.target.closest('.symptom-btn').dataset.symptom;
+      const pooped = e.target.closest('.symptom-btn').dataset?.pooped;
+      console.log(symptom);
+      const url = `?${raportDateStart.value ? `date[gt]=${raportDateStart.value}&` : ''}${raportDateEnd.value ? `date[lt]=${raportDateEnd.value}&` : ''}${symptom ? `symptoms=${symptom}&` : ''}${pooped ? `pooped=${true}` : ''}`;
+      console.log(url);
+
+      location.assign(`myRaportsDetails${url}`);
+    } catch (err) {
+      if (err.message) showAlert('error', err.message);
+      if (err.response) showAlert('error', err.response.data.message);
+    }
+  });
+}
 
 if (createRaportForm) {
   let meal;

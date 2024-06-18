@@ -23,6 +23,6 @@ html(lang="pl")
           .raport-card 
             p.raport--card-date= raport.date.toLocaleDateString('pl-PL')
             p.raport--card-title= raport.meal.title
-            p.raport--card-symptom= `Objawy: ${raport.symptoms}`
+            p.raport--card-symptom= `Objawy: ${raport.symptoms.join(', ')}`
             p.raport--card-pooped= `Wypróżnienie: ${raport.pooped === true ? 'tak' : 'nie'}`
         
