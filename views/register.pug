@@ -5,15 +5,20 @@ html(lang="pl")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet" href="styleslog.css")
     script(type="module" src="index.js" defer)
-    title Rejestracja
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
+    title IBS | Rejestracja
       
   body
     .login-container
       h2 Zarejestruj się
       form.form-register
-        input(type="email" name="email" placeholder="Email" required)
+        input(type="text" id='name' name="name" placeholder="Imię" required)
         br
-        input(type="password" name="password" placeholder="Hasło" required)
+        input(type="email" id='email' name="email" placeholder="Email" required)
+        br
+        input(type="password" id='password' name="password" placeholder="Hasło" required)
+        br
+        input(type="password" id='password-confirm' name="password-confirm" placeholder="Powtórz Hasło" required)
         br
         input#zapisz(type="submit" value="Zarejestruj się")
       .register-link

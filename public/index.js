@@ -1,6 +1,7 @@
 /* eslint-disable */
 const loginForm = document.querySelector('.form-login');
 const logoutBtn = document.querySelector('.logout');
+const registerForm = document.querySelector('.form-register');
 const saveMealForm = document.querySelector('.save--meal__form');
 const createRaportForm = document.querySelector('.create--raport-form');
 const quickMenuItems = document.querySelector('.quick--menu-items');
@@ -137,5 +138,31 @@ if (loginForm)
       }
     } catch (err) {
       showAlert('error', err.response.data.message);
+    }
+  });
+
+if (registerForm)
+  registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+      const email = document.getElementById('email').value;
+      const name = document.getElementById('name').value;
+      const password = document.getElementById('password').value;
+      const passwordConfirm = document.getElementById('password-confirm').value;
+      const res = await axios({
+        method: 'post',
+        url: '/api/v1/users/signup',
+        data: { email, name, password, passwordConfirm },
+      });
+
+      if (res.data.status === 'success') {
+        showAlert('success', 'Zarejestrowano pomyślnie');
+        window.setTimeout(() => {
+          location.assign('/');
+        }, 1500);
+      }
+    } catch (err) {
+      if (err.message) showAlert('error', err.message);
+      if (err.response) showAlert('error', err.response.data.message);
     }
   });
