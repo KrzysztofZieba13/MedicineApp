@@ -15,7 +15,7 @@ html(lang="pl")
   body
     .app-container
       header.header
-        p.hello-user Witaj, User1234
+        p.hello-user= `Witaj, ${user.name}`
         .nav-btns
           a.link.nav-link.logout(href="#") Wyloguj
       section.section
@@ -41,7 +41,7 @@ html(lang="pl")
             each meal in meals
               .quick--menu-item(data-id=`${meal._id}`)
                 p.menu--item-title= meal.title
-                p.menu--item-ingredinets= `(${meal.ingredients.join(', ')})`
+                p.menu--item-ingredinets= `${meal.ingredients.join(', ')}`
 
         // CREATE RAPORT
         .create--raport-box.box
@@ -51,9 +51,13 @@ html(lang="pl")
             input#title-raport.save--meal__input(type="text")
             label.form__label.margin-top(for="ingredients-raport") Składniki
             input#ingredients-raport.save--meal__input(type="text")
-            label.form__label.margin-top(for="symptoms-raport") Składniki
+            label.form__label.margin-top(for="symptoms-raport") Objawy
             input#symptoms-raport.save--meal__input(type="text")
             label.form__label.margin-top(for="date-raport") Data
             input#date-raport.save--meal__input(type="date")
+            .pooped-box
+              label.form__label.margin-top.label-pooped(for="pooped-raport") Wypróżnienie?
+              input#pooped-checkbox.margin-top(type='checkbox' value='pooped')
+
             input.submit__btn.save--raport__btn(type="submit" value="Zapisz")
           ion-icon.create-raport-icon(name="clipboard-outline")

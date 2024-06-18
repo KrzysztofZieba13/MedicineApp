@@ -276,3 +276,52 @@ html {
 .alert--error {
   background-color: #eb4d4b;
 }
+
+.pooped-box {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/*********************************/
+/******USER RAPORTS DETAILS*******/
+/*********************************/
+.section--raports-details {
+  margin: 6.4rem auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.2rem;
+  width: 140rem;
+}
+
+.raport-card {
+  box-shadow: 0 0 11px 7px rgba(0, 0, 0, 0.1);
+  padding: 1.6rem 1.2rem;
+  border-radius: 7px;
+}
+
+.raport--card-date {
+  font-size: 1.2rem;
+  color: #3a3a3a;
+  text-align: center;
+  margin-bottom: 2.4rem;
+}
+
+.raport--card-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.raport--card-symptom {
+  margin-top: 1.2rem;
+  font-size: 1.6rem;
+}
+
+.raport--card-pooped {
+  font-size: 1.6rem;
+  margin-top: 1.2rem;
+}
+
+.span-pooped {
+  color: red;
+}

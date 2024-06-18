@@ -7,9 +7,12 @@ const APIFeatures = require('../utils/apiFeatures');
 exports.createRaport = catchAsync(async (req, res, next) => {
   let date;
   let symptoms;
+  let pooped;
   if (req.body.date) date = new Date(req.body.date);
   if (!req.body.symptoms) symptoms = 'brak';
   else symptoms = req.body.symptoms.toLowerCase().split(', ');
+  if (req.body.pooped) pooped = true;
+  else pooped = false;
 
   const meal = await Meal.create({
     title: req.body.title,
@@ -21,7 +24,7 @@ exports.createRaport = catchAsync(async (req, res, next) => {
     meal: meal._id,
     symptoms,
     date,
-    pooped: req.body.pooped,
+    pooped: pooped,
     user: req.user.id,
   });
 

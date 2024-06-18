@@ -24,7 +24,7 @@ exports.createMeal = catchAsync(async (req, res, next) => {
   const meal = await Meal.create({
     title: req.body.title,
     ingredients,
-    shared: req.body.shared,
+    shared: true,
   });
 
   res.status(201).json({
