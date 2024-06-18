@@ -1,0 +1,37 @@
+doctype html
+html(lang="pl")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="style.css")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet")
+    title IBS | aplikacja
+  body
+    .app-container
+      header.header
+        p.hello-user Twoje raporty
+        .nav-btns
+          a.link.nav-link.logout(href="#") Wyloguj
+        .nav-btns2
+          a.link.nav-link.back-mainpage(href="/") Powrót
+      section.section-raports
+        .select--date-box
+          .raport--date-box
+            label.form__label(for="raport-date") Data początkowa
+            input#raport-date.save--meal__input.form__input(type="date")
+          .raport--date-box
+            label.form__label(for="raport-date") Data końcowa
+            input#raport-date.save--meal__input.form__input(type="date")
+        // CHOOSE SYMPTOMS
+        .choose-symptoms-box
+          .symptom-btn(id="ogolne") ogólne
+          .symptom-btn(id="nudnosci") nudności
+          .symptom-btn(id="bol_brzucha") ból brzucha
+          .symptom-btn(id="sennosc") senność
+          .symptom-btn(id="wzdecia") wzdęcia
+          .symptom-btn(id="biegunki") biegunki
+          .symptom-btn(id="zaparcia") zaparcia
+          .symptom-btn(id="brak") brak
+          .symptom-btn(id="wyproznienia") wypróżnienia

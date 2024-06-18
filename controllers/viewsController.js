@@ -13,3 +13,15 @@ exports.getMainpage = catchAsync(async (req, res, next) => {
 
   res.status(200).render('mainpage', { meals });
 });
+
+exports.getLoginpage = catchAsync(async (req, res, next) => {
+  res.status(200).render('login');
+});
+
+exports.getRegisterpage = catchAsync(async (req, res, next) => {
+  res.status(200).render('register');
+});
+
+exports.getUserRaports = catchAsync(async (req, res, next) => {
+  res.status(200).render('raports');
+});

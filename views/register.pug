@@ -1,0 +1,19 @@
+doctype html
+html(lang="pl")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="styleslog.css")
+    title Rejestracja
+      
+  body
+    .login-container
+      h2 Zarejestruj się
+      form
+        input(type="email" name="email" placeholder="Email" required)
+        br
+        input(type="password" name="password" placeholder="Hasło" required)
+        br
+        input#zapisz(type="submit" value="Zarejestruj się")
+      .register-link
+        a(href="./login") Zaloguj się

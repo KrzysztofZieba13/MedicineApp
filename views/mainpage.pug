@@ -10,7 +10,7 @@ html(lang="pl")
     script(type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js")
     script(nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js")
     script(src="https://unpkg.com/axios/dist/axios.min.js")
-    script(type="module" src="js/controllerMainpage.js" defer)
+    script(type="module" src="index.js" defer)
     title IBS | aplikacja
   body
     .app-container
@@ -30,7 +30,7 @@ html(lang="pl")
             input.submit__btn.save--meal__btn(type="submit" value="Zapisz")
 
         // MY RAPORTS BTN
-        a.link.nav-link.myraports--menu-box.box(href="raports.html")
+        a.link.nav-link.myraports--menu-box.box(href="./myRaports")
           ion-icon.raport-icon(name="stats-chart-outline")
           | Moje Raporty
 
