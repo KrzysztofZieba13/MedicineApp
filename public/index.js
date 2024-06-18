@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { showAlert } from './alerts.js';
+import { showAlert } from './alerts';
 const loginForm = document.querySelector('.form-login');
 
 loginForm.addEventListener('submit', async (e) => {
