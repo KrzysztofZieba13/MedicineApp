@@ -1,0 +1,59 @@
+doctype html
+html(lang="pl")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="style.css")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet")
+    script(type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js")
+    script(nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js")
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
+    script(type="module" src="js/controllerMainpage.js" defer)
+    title IBS | aplikacja
+  body
+    .app-container
+      header.header
+        p.hello-user Witaj, User1234
+        .nav-btns
+          a.link.nav-link.logout(href="#") Wyloguj
+      section.section
+        // SAVE MEAL
+        .save--meal-box.box
+          h3.third-header Zapisz Posiłek
+          form.save--meal__form
+            label.form__label(for="title") Tytuł
+            input#title.save--meal__input(type="text")
+            label.form__label.margin-top(for="ingredients") Składniki
+            input#ingredients.save--meal__input(type="text")
+            input.submit__btn.save--meal__btn(type="submit" value="Zapisz")
+
+        // MY RAPORTS BTN
+        a.link.nav-link.myraports--menu-box.box(href="raports.html")
+          ion-icon.raport-icon(name="stats-chart-outline")
+          | Moje Raporty
+
+        // QUICK MENU
+        .quick--menu-box.box
+          h3.third-header Szybki wybór
+          .quick--menu-items
+            each meal in meals
+              .quick--menu-item(data-id=`${meal._id}`)
+                p.menu--item-title= meal.title
+                p.menu--item-ingredinets= `(${meal.ingredients.join(', ')})`
+
+        // CREATE RAPORT
+        .create--raport-box.box
+          h3.third-header Utwórz Nowy Raport
+          form.create--raport-form
+            label.form__label(for="title-raport") Tytuł
+            input#title-raport.save--meal__input(type="text")
+            label.form__label.margin-top(for="ingredients-raport") Składniki
+            input#ingredients-raport.save--meal__input(type="text")
+            label.form__label.margin-top(for="symptoms-raport") Składniki
+            input#symptoms-raport.save--meal__input(type="text")
+            label.form__label.margin-top(for="date-raport") Data
+            input#date-raport.save--meal__input(type="date")
+            input.submit__btn.save--raport__btn(type="submit" value="Zapisz")
+          ion-icon.create-raport-icon(name="clipboard-outline")

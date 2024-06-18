@@ -1,37 +1,44 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
-const mealRouter = require("./routes/mealRoutes");
-const userRouter = require("./routes/userRoutes");
-const raportRouter = require("./routes/raportRoutes");
-const AppError = require("./utils/appError");
-const globalErrorHandler = require("./controllers/errorController");
+const path = require('path');
+const express = require('express');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
+const viewRouter = require('./routes/viewRouter');
+const mealRouter = require('./routes/mealRoutes');
+const userRouter = require('./routes/userRoutes');
+const raportRouter = require('./routes/raportRoutes');
+const AppError = require('./utils/appError');
+const globalErrorHandler = require('./controllers/errorController');
 
-dotenv.config({ path: "./config.env" });
+dotenv.config({ path: './config.env' });
 
 //Init app
 const app = express();
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 const DB = process.env.DATABASE.replace(
-  "<PASSWORD>",
-  process.env.DATABASE_PASSWORD
+  '<PASSWORD>',
+  process.env.DATABASE_PASSWORD,
 );
 mongoose.connect(DB).then(() => {
-  console.log("DB connection successfull!");
+  console.log('DB connection successfull!');
 });
 
-app.use("/api/v1/meals", mealRouter);
-app.use("/api/v1/users", userRouter);
-app.use("/api/v1/raports", raportRouter);
-app.all("*", (req, res, next) =>
+app.use('/', viewRouter);
+app.use('/api/v1/meals', mealRouter);
+app.use('/api/v1/users', userRouter);
+app.use('/api/v1/raports', raportRouter);
+app.all('*', (req, res, next) =>
   next(
-    new AppError(`Trasa nie istnieje na tym serwerze: ${req.originalUrl}`, 404)
-  )
+    new AppError(`Trasa nie istnieje na tym serwerze: ${req.originalUrl}`, 404),
+  ),
 );
 app.use(globalErrorHandler);
 //set port value and start server listening

@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Open sans', sans-serif;
+  color: #212121;
+}
+
+.third-header {
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.box {
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  border-radius: 7px;
+  box-shadow: 0 0 11px 7px rgba(0, 0, 0, 0.15);
+}
+
+.link:link,
+.link:visited {
+  text-decoration: none;
+  color: #212121;
+}
+
+.app-container {
+  background-color: #ebf4ec;
+  padding: 3.2rem;
+  margin: 3.2rem;
+  border-radius: 7px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  font-size: 2.4rem;
+  position: relative;
+}
+
+.nav-btns {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.nav-btns a:link,
+.nav-btns a:visited {
+  color: #333;
+  text-decoration: none;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 2.3fr;
+  gap: 3.2rem;
+  margin-top: 3.2rem;
+}
+
+.save--meal-box {
+  background-color: #4caf50;
+}
+
+.save--meal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.save--meal__input {
+  font-size: 1.6rem;
+  border-radius: 7px;
+  border: none;
+  padding: 0.6rem 1.2rem;
+}
+
+.margin-top {
+  margin-top: 1.6rem;
+}
+
+.submit__btn {
+  border: none;
+  background-color: #c8e6c9;
+  margin-top: 2.4rem;
+  border-radius: 7px;
+  align-self: center;
+  padding: 1.2rem 3.2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submit__btn:hover {
+  background-color: #388e3c;
+}
+
+.quick--menu-box {
+  background-color: #c8e6c9;
+}
+
+.quick--menu-items {
+  height: 40rem;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.quick--menu-item {
+  border-bottom: 1px solid #4caf50;
+  padding: 1.2rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.quick--menu-item:hover {
+  background-color: #b4cfb5;
+}
+
+.menu--item-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.myraports--menu-box {
+  background-color: #4caf50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  font-size: 6.4rem;
+}
+
+.myraports--menu-box:hover {
+  background-color: #388e3c;
+}
+
+.link-myraports {
+  font-size: 6.4rem;
+  z-index: 10;
+}
+
+.create--raport-box {
+  background-color: #c8e6c9;
+  position: relative;
+}
+
+.create--raport-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.save--raport__btn {
+  background-color: #4caf50;
+}
+
+.raport-icon {
+  position: absolute;
+  top: 5px;
+  right: 3%;
+  z-index: 10;
+  font-size: 32rem;
+  color: #c8e6c977;
+  z-index: 1;
+}
+
+.create-raport-icon {
+  position: absolute;
+  font-size: 44rem;
+  color: #388e3c3b;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -2%;
+}
+/********************/
+/******RAPORTS*******/
+/********************/
+.section-raports {
+  margin-top: 4.4rem;
+}
+
+.select--date-box {
+  display: flex;
+  justify-content: center;
+  gap: 9.6rem;
+}
+
+.raport--date-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.choose-symptoms-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+  margin-top: 4.4rem;
+}
+
+.symptom-btn {
+  text-transform: uppercase;
+  font-size: 4.4rem;
+  background-color: #4caf50;
+  border-radius: 7px;
+  text-align: center;
+  padding: 6.4rem 0;
+  transition: all 0.3s;
+  cursor: pointer;
+  color: #212121;
+  box-shadow: 0 0 11px 7px rgba(0, 0, 0, 0.15);
+}
+
+.symptom-btn:hover {
+  background-color: #388e3c;
+}
+
+.nav-btns2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/********************/
+/******UNAUTHO*******/
+/********************/
+.unauthorized-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20rem;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.unauthorized-box a {
+  font-size: 2.4rem;
+}
